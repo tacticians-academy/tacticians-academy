@@ -6,7 +6,7 @@ import AugmentTierCalculator from '#/components/AugmentTierCalculator.vue'
 
 <template>
 <header>
-	<nav class="pl-3 py-2 bg-gray-900  flex items-center">
+	<nav class="pl-3 py-2 bg-gray-200 dark:bg-gray-900  flex items-center">
 		<a href="/" class="font-medium">Tactician's Academy</a>
 		<!-- <a href="/flashcards" class="sub-page">Flashcards</a> -->
 		<!-- <a href="/augment-calculator" class="sub-page">Augment Tier Calculator</a> -->
@@ -15,10 +15,12 @@ import AugmentTierCalculator from '#/components/AugmentTierCalculator.vue'
 <div class="augment-container">
 	<AugmentTierCalculator />
 </div>
-<footer class="text-secondary space-x-2  flex justify-center">
-	<a href="https://tftsim.netlify.app" target="_blank">Fight Simulator (WIP) ⍈</a>
-	<div>・</div>
-	<div>© 2022</div>
+<footer class="h-16 text-secondary">
+	<nav class="flex justify-center items-center">
+		<a href="https://tftsim.netlify.app" target="_blank">Fight Simulator (WIP) ⍈</a>
+		・
+		<a>© 2022</a>
+	</nav>
 </footer>
 </template>
 

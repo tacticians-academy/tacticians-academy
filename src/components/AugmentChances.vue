@@ -30,7 +30,7 @@ const largestProbability = 85
 			<button
 				type="button"
 				class="rounded-full min-w-12 min-h-12"
-				:class="tierIndex === 0 ? 'bg-gray-300' : (tierIndex === 1 ? 'bg-yellow-200' : 'bg-purple-200')"
+				:class="tierIndex === 0 ? 'bg-gray-300' : (tierIndex === 1 ? 'bg-yellow-300 dark:bg-yellow-200' : 'bg-purple-300 dark:bg-purple-200')"
 				:style="{ minWidth: '4vmin', minHeight: '4vmin', width: `${probability >= largestProbability ? 100 : 100 * probability / largestProbability}%`, height: `${probability >= largestProbability ? 100 : 100 * probability / largestProbability}%` }"
 				@click="onPropagateSelect(tierIndex, depth)"
 			>
