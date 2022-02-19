@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref, defineProps, defineEmits } from 'vue'
+import { defineProps, defineEmits } from 'vue'
 
-import type { AugmentProbability } from '#/data/set6/augmentProbabilities'
+import type { AugmentTierProbability } from '@tacticians-academy/academy-library'
 
 const props = defineProps<{
-	probabilities: AugmentProbability[],
+	probabilities: AugmentTierProbability[],
 	depth: number
 	selectedTiers: number[],
 }>()

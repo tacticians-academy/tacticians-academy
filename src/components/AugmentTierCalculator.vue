@@ -3,7 +3,7 @@ import AugmentChances from '#/components/AugmentChances.vue'
 
 import { computed, ref } from 'vue'
 
-import { probabilityTree } from '#/data/set6/augmentProbabilities'
+import { augmentTierProbabilities } from '@tacticians-academy/academy-library/dist/set6/augment-tiers'
 
 const selectedTiers = ref([-1, -1, -1, -1])
 
@@ -16,7 +16,7 @@ function onSelectTierAtDepth(tierIndex: number, depth: number) {
 
 const totalProbability = computed(() => {
 	let accumulator = 1
-	let current = probabilityTree
+	let current = augmentTierProbabilities
 	for (const tier of selectedTiers.value) {
 		accumulator *= current[0] / 100
 		if (tier === -1) {
@@ -31,8 +31,8 @@ const totalProbability = computed(() => {
 <template>
 <div class="p-2">Percent of total games with these augment tiers: <b v-if="totalProbability < 1">{{ Math.round(totalProbability * 100) }} %</b></div>
 <AugmentChances
-	v-if="probabilityTree[1]"
-	:probabilities="probabilityTree[1]" :depth="0" :selectedTiers="selectedTiers"
+	v-if="augmentTierProbabilities[1]"
+	:probabilities="augmentTierProbabilities[1]" :depth="0" :selectedTiers="selectedTiers"
 	class="text-bg"
 	@select="onSelectTierAtDepth"
 />
