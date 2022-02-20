@@ -4,9 +4,9 @@ import { defineProps, defineEmits } from 'vue'
 import type { AugmentTierProbability } from '@tacticians-academy/academy-library'
 
 const props = defineProps<{
-	probabilities: AugmentTierProbability[],
+	probabilities: AugmentTierProbability[]
 	depth: number
-	selectedTiers: number[],
+	selectedTiers: number[]
 }>()
 
 const emit = defineEmits(['select'])
