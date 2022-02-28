@@ -1,19 +1,18 @@
 <script setup lang="ts">
 import '#/assets/main.postcss'
 
-import AugmentTierCalculator from '#/components/AugmentTierCalculator.vue'
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
 <header>
 	<nav class="pl-3 py-2 bg-gray-200 dark:bg-gray-900  flex items-center">
-		<a href="/" class="font-medium">Tactician's Academy</a>
-		<!-- <a href="/flashcards" class="sub-page">Flashcards</a> -->
-		<!-- <a href="/augment-calculator" class="sub-page">Augment Tier Calculator</a> -->
+		<RouterLink to="/" class="font-medium">Tactician's Academy</RouterLink>
+		<RouterLink :to="{ name: 'AugmentTierCalculator' }" class="sub-page">Augment Tier Calculator</RouterLink>
 	</nav>
 </header>
 <div class="augment-container">
-	<AugmentTierCalculator />
+	<RouterView />
 </div>
 <footer class="h-16 text-secondary">
 	<nav class="flex justify-center items-center">
