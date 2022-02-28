@@ -6,9 +6,9 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
 <header>
-	<nav class="pl-3 py-2 bg-gray-200 dark:bg-gray-900  flex items-center">
+	<nav class="pl-3 py-2 bg-secondary  flex items-center">
 		<RouterLink to="/" class="font-medium">Tactician's Academy</RouterLink>
-		<RouterLink :to="{ name: 'AugmentTierCalculator' }" class="sub-page">Augment Tier Calculator</RouterLink>
+		<RouterLink :to="{ name: 'AugmentTierCalculator' }" class="text-secondary">Augment Tier Calculator</RouterLink>
 	</nav>
 </header>
 <div class="augment-container">
@@ -26,10 +26,6 @@ import { RouterLink, RouterView } from 'vue-router'
 <style scoped lang="postcss">
 nav a {
 	@apply h-8 px-3 flex items-center;
-}
-
-.sub-page {
-	@apply text-gray-400;
 }
 
 .augment-container {
