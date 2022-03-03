@@ -3,7 +3,7 @@ import AugmentChances from '#/components/AugmentChances.vue'
 
 import { computed, ref } from 'vue'
 
-import { augmentTierProbabilities } from '@tacticians-academy/academy-library/dist/set6/augment-tiers'
+import { augmentTierProbabilities } from '@tacticians-academy/academy-library/dist/set6/hardcoded/augment-tiers'
 
 const selectedTiers = ref([-1, -1, -1, -1])
 
