@@ -8,10 +8,11 @@ import { RouterLink, RouterView } from 'vue-router'
 <header>
 	<nav class="pl-3 py-2 bg-secondary  flex items-center">
 		<RouterLink to="/" class="font-medium">Tactician's Academy</RouterLink>
+		<RouterLink :to="{ name: 'Flashcards' }" class="text-secondary">Flashcards</RouterLink>
 		<RouterLink :to="{ name: 'AugmentTierCalculator' }" class="text-secondary">Augment Tier Calculator</RouterLink>
 	</nav>
 </header>
-<div class="augment-container">
+<div class="container">
 	<RouterView />
 </div>
 <footer class="h-16 text-secondary">
@@ -28,7 +29,7 @@ nav a {
 	@apply h-8 px-3 flex items-center;
 }
 
-.augment-container {
+.container {
 	@apply mb-16;
 	min-height: 67vmin;
 }
