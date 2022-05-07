@@ -62,12 +62,12 @@ function onFlashcard() {
 <button class="flashcard-content" @click="onFlashcard">
 	<div class="card-container">
 		<div class="icon-container" :class="showBack ? 'small' : 'large'">
-			<img :src="getIconURL(nextComponents[0], false)" :alt="nextComponents[0].name">
-			<div>＋</div>
-			<img :src="getIconURL(nextComponents[1], false)" :alt="nextComponents[1].name">
+			<img :id="nextComponents[0].name" :src="getIconURL(nextComponents[0], false)" :alt="nextComponents[0].name">
+			<div class="text-secondary font-thin">＋</div>
+			<img :id="nextComponents[1].name" :src="getIconURL(nextComponents[1], false)" :alt="nextComponents[1].name">
 		</div>
 		<div v-if="showBack" class="h-auto flex space-x-2">
-			<img :src="getIconURL(nextCompleted!, false)">
+			<img :src="getIconURL(nextCompleted!, false)" :alt="nextCompleted!.name" class="w-32 h-32">
 			<div class="max-w-[32rem] text-left">
 				<div class="text-xl ">{{ nextCompleted!.name }}</div>
 				<div class="">{{ nextCompleted!.description }}</div>
@@ -87,11 +87,12 @@ function onFlashcard() {
 	@apply flex;
 }
 .icon-container.large {
-	font-size: 128px;
-	line-height: 100%;
+	@apply font-thin;
+	font-size: 96px;
+	line-height: 125%;
 }
 .icon-container.large img {
-	height: 128px;
+	@apply w-32 h-32;
 }
 .icon-container.small {
 	@apply mb-2;
