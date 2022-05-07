@@ -6,27 +6,33 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
 <header>
-	<nav class="pl-3 py-2 bg-secondary  flex items-center">
-		<RouterLink to="/" class="font-medium">Tactician's Academy</RouterLink>
-		<RouterLink :to="{ name: 'Flashcards' }" class="text-secondary">Flashcards</RouterLink>
-		<RouterLink :to="{ name: 'AugmentTierCalculator' }" class="text-secondary">Augment Tier Calculator</RouterLink>
+	<nav class="pl-3 py-2 bg-secondary">
+		<ul class="flex items-center">
+			<li><RouterLink to="/" class="font-medium">Tactician's Academy</RouterLink></li>
+			<li><RouterLink :to="{ name: 'Flashcards' }" class="text-secondary">Flashcards</RouterLink></li>
+			<li><RouterLink :to="{ name: 'AugmentTierCalculator' }" class="text-secondary">Augment Tier Calculator</RouterLink></li>
+		</ul>
 	</nav>
 </header>
 <div class="container">
 	<RouterView />
 </div>
 <footer class="h-16 text-secondary">
-	<nav class="flex justify-center items-center">
-		<a href="https://tftsim.netlify.app" target="_blank">Fight Simulator (WIP) ⍈</a>
-		・
-		<a>© 2022</a>
+	<nav>
+		<ul class="flex justify-center items-center">
+			<li><a href="https://simulator.tacticians.academy" target="_blank">Fight Simulator (WIP)</a></li>
+			・
+			<li><a href="https://github.com/tacticians-academy/tacticians-academy" target="_blank">GitHub</a></li>
+			・
+			<li>© 2022</li>
+		</ul>
 	</nav>
 </footer>
 </template>
 
 <style scoped lang="postcss">
-nav a {
-	@apply h-8 px-3 flex items-center;
+nav li {
+	@apply h-8 px-2 flex items-center;
 }
 
 .container {
