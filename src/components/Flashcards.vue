@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
-import { getIconURL } from '@tacticians-academy/academy-library'
+import { getIconURL, SetNumber } from '@tacticians-academy/academy-library'
 import { itemFlashcards } from '@tacticians-academy/academy-library/dist/set6/flashcards/items'
+
+const CURRENT_SET_NUMBER: SetNumber = 6.5
 
 const showBack = ref(false)
 
@@ -62,12 +64,12 @@ function onFlashcard() {
 <button class="flashcard-content" @click="onFlashcard">
 	<div class="card-container">
 		<div class="icon-container" :class="showBack ? 'small' : 'large'">
-			<img :id="nextComponents[0].name" :src="getIconURL(nextComponents[0], false)" :alt="nextComponents[0].name">
+			<img :id="nextComponents[0].name" :src="getIconURL(CURRENT_SET_NUMBER, nextComponents[0], false)" :alt="nextComponents[0].name">
 			<div class="text-secondary font-thin">＋</div>
-			<img :id="nextComponents[1].name" :src="getIconURL(nextComponents[1], false)" :alt="nextComponents[1].name">
+			<img :id="nextComponents[1].name" :src="getIconURL(CURRENT_SET_NUMBER, nextComponents[1], false)" :alt="nextComponents[1].name">
 		</div>
 		<div v-if="showBack" class="h-auto flex space-x-2">
-			<img :src="getIconURL(nextCompleted!, false)" :alt="nextCompleted!.name" class="w-32 h-32">
+			<img :src="getIconURL(CURRENT_SET_NUMBER, nextCompleted!, false)" :alt="nextCompleted!.name" class="w-32 h-32">
 			<div class="max-w-[32rem] text-left">
 				<div class="text-xl ">{{ nextCompleted!.name }}</div>
 				<div class="">{{ nextCompleted!.description }}</div>
